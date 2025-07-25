@@ -1,0 +1,31 @@
+﻿Scenario:
+You’re making a small RPG system where a player can equip weapons and armor.
+The player wants to save and load previous equipment configurations (loadouts) — like “stealth build,” “tank build,” etc.
+
+Goal:
+Implement a system using the Memento pattern to:
+
+Equip new items (e.g., sword, shield, helmet)
+
+Save the current loadout
+
+Restore a previously saved loadout
+
+Show current loadout
+
+Requirements
+Character class should have:
+
+EquipWeapon(string name)
+
+EquipArmor(string name)
+
+SaveLoadout() – returns a Memento
+
+LoadLoadout(Memento m) – restores from a Memento
+
+ShowLoadout() – prints current items
+
+LoadoutMemento class stores a snapshot of the current loadout.
+
+A simple LoadoutManager (Caretaker) holds saved Mementos by name ("stealth", "tank").
