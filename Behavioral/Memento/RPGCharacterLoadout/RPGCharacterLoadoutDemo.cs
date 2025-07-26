@@ -4,7 +4,6 @@
     {
         public override void Run()
         {
-
             Character character = new Character(new LoadoutCaretaker());
 
             //first loadout 
@@ -21,7 +20,6 @@
             //restore memento
             character.LoadLoadout("hard fit");
             character.ShowLoadout();
-
         }
     }
 }

@@ -7,7 +7,7 @@
         public Character(LoadoutCaretaker caretaker)
         {
             loadoutCaretaker = caretaker;
-            loadout = new Loadout();
+            loadout = new();
         }
 
         public void SaveLoadout(string title)
@@ -21,6 +21,11 @@
             Console.WriteLine($"Loading Loadout: \"{loadoutMementoTitle}\"\n");
 
             loadout = loadoutCaretaker.GetLoadoutMemento(loadoutMementoTitle);
+            if (loadout == null)
+            {
+                Console.WriteLine("Failed to restore loadout!");
+                Environment.Exit(1);
+            }
         }
         public void EquipArmor(string armor)
         {
