@@ -3,29 +3,25 @@
     internal class Character
     {
         private Loadout loadout;
-        private LoadoutCaretaker loadoutCaretaker;
-        public Character(LoadoutCaretaker caretaker)
-        {
-            loadoutCaretaker = caretaker;
-            loadout = new();
-        }
-
-        public void SaveLoadout(string title)
+        public Character() => loadout = new();
+        public LoadoutMemento SaveLoadout(string title)
         {
             Console.WriteLine($"Saving Loadout: \"{title}\"\n");
-            loadoutCaretaker.AddLoadoutMemento(loadout, title);
+            return new(
+                loadout.Armor,
+                loadout.Sword,
+                title);
         }
-
-        public void LoadLoadout(string loadoutMementoTitle)
+        public void LoadLoadout(LoadoutMemento memento)
         {
-            Console.WriteLine($"Loading Loadout: \"{loadoutMementoTitle}\"\n");
-
-            loadout = loadoutCaretaker.GetLoadoutMemento(loadoutMementoTitle);
-            if (loadout == null)
+            if (memento == null)
             {
                 Console.WriteLine("Failed to restore loadout!");
                 Environment.Exit(1);
             }
+            Console.WriteLine($"Loaded Loadout: \"{memento.Title}\"\n");
+            loadout = new Loadout(memento.Armor, memento.Sword);
+            
         }
         public void EquipArmor(string armor)
         {
@@ -35,7 +31,6 @@
         public void EquipSword(string sword)
         {
             Console.WriteLine($"Equipping sword: \"{sword}\"\n");
-
             loadout.Sword = sword;
         }
         public void ShowLoadout()
