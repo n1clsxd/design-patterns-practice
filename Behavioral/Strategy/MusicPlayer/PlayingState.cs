@@ -1,11 +1,7 @@
 ﻿namespace DesignPatternsPractice.Behavioral.Strategy.MusicPlayer
 {
-    internal class PlayingState : IMusicPlayerState
+    internal class PlayingState(MusicPlayer player) : IMusicPlayerState
     {
-        private MusicPlayer musicPlayer;
-        public PlayingState(MusicPlayer player) {
-            musicPlayer = player;
-        }
         public void Play()
         {
             Console.WriteLine("Already playing.");
@@ -13,12 +9,12 @@
         public void Stop()
         {
             Console.WriteLine("Stopping music.");
-            musicPlayer.SetState(new StoppedState(musicPlayer));
+            player.SetState(new StoppedState(player));
         }
         public void Pause()
         {
             Console.WriteLine("Pausing music");
-            musicPlayer.SetState(new PausedState(musicPlayer));
+            player.SetState(new PausedState(player));
         }
 
     }

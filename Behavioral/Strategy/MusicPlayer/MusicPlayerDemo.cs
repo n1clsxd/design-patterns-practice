@@ -10,7 +10,7 @@ namespace DesignPatternsPractice.Behavioral.Strategy.MusicPlayer
     {
         public override void Run()
         {
-            MusicPlayer musicPlayer = new MusicPlayer();
+            MusicPlayer musicPlayer = new();
 
             //stop to pause
             musicPlayer.Pause();

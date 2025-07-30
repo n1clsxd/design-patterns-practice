@@ -1,13 +1,4 @@
-﻿using DesignPatternsPractice.Behavioral.Memento.RPGCharacterLoadout;
+﻿using DesignPatternsPractice;
 
-namespace DesignPatternsPractice
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            //Demo demo = new ExerciseDemo();
-            //demo.Run();
-        }
-    }
-}
+//Demo demo = new PatternDemo();
+//demo.Run();
