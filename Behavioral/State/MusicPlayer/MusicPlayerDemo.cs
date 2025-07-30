@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatternsPractice.Behavioral.Strategy.MusicPlayer
+namespace DesignPatternsPractice.Behavioral.State.MusicPlayer
 {
     internal class MusicPlayerDemo : Demo
     {

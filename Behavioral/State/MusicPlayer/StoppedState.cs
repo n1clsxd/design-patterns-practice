@@ -1,4 +1,4 @@
-﻿namespace DesignPatternsPractice.Behavioral.Strategy.MusicPlayer
+﻿namespace DesignPatternsPractice.Behavioral.State.MusicPlayer
 {
     internal class StoppedState(MusicPlayer player) : IMusicPlayerState
     {
