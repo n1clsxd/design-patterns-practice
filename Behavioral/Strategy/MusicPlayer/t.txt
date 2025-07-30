@@ -1,0 +1,56 @@
+﻿ Task: Implement the State Pattern with a Music Player
+Create a simple music player that can be in one of three states:
+
+Playing
+
+Paused
+
+Stopped
+
+🔧 Requirements:
+Define an interface IMusicPlayerState with methods like:
+
+Play(MusicPlayer player)
+
+Pause(MusicPlayer player)
+
+Stop(MusicPlayer player)
+
+Create three concrete state classes:
+
+PlayingState –
+
+Play() does nothing or logs "Already playing."
+
+Pause() switches to PausedState
+
+Stop() switches to StoppedState
+
+PausedState –
+
+Play() switches to PlayingState
+
+Pause() does nothing or logs "Already paused."
+
+Stop() switches to StoppedState
+
+StoppedState –
+
+Play() switches to PlayingState
+
+Pause() does nothing or logs "Can't pause. Nothing is playing."
+
+Stop() does nothing or logs "Already stopped."
+
+The MusicPlayer class must:
+
+Store a reference to the current state.
+
+Expose public methods: Play(), Pause(), Stop() — and delegate those calls to the current state.
+
+Have a method SetState(IMusicPlayerState state) used by states to switch behavior.
+
+🧪 Bonus:
+Track the currently playing track (just a string name).
+
+Add logging when a state is switched, e.g., "Switching to PausedState".
