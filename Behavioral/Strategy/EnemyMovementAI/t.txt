@@ -1,0 +1,30 @@
+﻿🎯 Task: Enemy AI Movement Strategy
+You're building a simple top-down 2D game. Enemies have 
+different movement behaviors (strategies) like:
+
+ChasePlayer: Follows the player directly.
+
+PatrolArea: Moves between predefined patrol points.
+
+RandomWander: Moves randomly within a radius.
+
+Implement the Strategy Pattern so the Enemy class can switch between 
+these behaviors at runtime. 
+Example situations:
+
+An enemy starts with PatrolArea.
+
+When the player is detected, it switches to ChasePlayer.
+
+If the player escapes, it switches to RandomWander.
+
+Requirements:
+An IMovementStrategy interface.
+
+At least the three strategies mentioned.
+
+An Enemy class that can be given a strategy and execute it through Move().
+
+Simulate a scenario (e.g., in EnemyDemo) where strategy changes happen based 
+on simple conditions (e.g., "Player in range").
+
